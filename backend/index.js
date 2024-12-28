@@ -1,10 +1,10 @@
 import express from 'express'
 import cors from 'cors'
-import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cookieParser from "cookie-parser"
 
 import connectDB  from './configs/db.js'
+import authRoutes from "./routes/auth.routes.js"
 import dashboardRoutes from "./routes/dashboard.routes.js"
 import orderRoutes from "./routes/order.routes.js"
 import returnRoutes from "./routes/return.routes.js"
@@ -25,10 +25,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({credentials: true}));
 
-//auth Routes
-
 
 // Routes
+app.use("/api/auth", authRoutes)
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/orders', orderRoutes);
 app.use("/api/returns", returnRoutes)
