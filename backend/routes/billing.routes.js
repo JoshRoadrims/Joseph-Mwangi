@@ -1,5 +1,5 @@
 import express from "express";
-import billingController from '../controllers/billing.controller.js';
+import {createInvoice, getInvoices, updatePaymentStatus } from '../controllers/billing.controller.js';
 const router = express.Router()
 
 
