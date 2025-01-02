@@ -10,7 +10,7 @@ import orderRoutes from "./routes/order.routes.js"
 import returnRoutes from "./routes/return.routes.js"
 import billingroutes from "./routes/billing.routes.js"
 import settingRoutes from "./routes/setting.routes.js"
-import generelRoutes from "./routes/generel.routes.js"
+import generalRoutes from "./routes/general.routes.js"
 
 //CONFIGURATIONS
 dotenv.config();
@@ -33,7 +33,7 @@ app.use('/api/orders', orderRoutes);
 app.use("/api/returns", returnRoutes)
 app.use("/api/billings", billingroutes)
 app.use("/api/settings", settingRoutes)
-app.use("/api/general", generelRoutes) 
+app.use("/api/general", generalRoutes) 
 
 
 app.listen(PORT, () => console.log(`Roadrims backend server running on port: ${PORT}`))
